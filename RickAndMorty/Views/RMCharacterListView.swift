@@ -8,7 +8,6 @@
 import UIKit
 
 final class RMCharacterListView: UIView {
-    
     private let viewModel = RMCharacterListViewModel()
     
     private let spinner: UIActivityIndicatorView = {
@@ -18,7 +17,7 @@ final class RMCharacterListView: UIView {
         return spinner
     }()
     
-    private let collectionView : UICollectionView = {
+    private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -26,10 +25,9 @@ final class RMCharacterListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(RMCharacterCollectionViewCell.self, forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
         return collectionView
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,8 +38,9 @@ final class RMCharacterListView: UIView {
         viewModel.fetchCharacters()
         
         setUpCollectionView()
-}
+    }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -65,12 +64,12 @@ final class RMCharacterListView: UIView {
     private func setUpCollectionView() {
         collectionView.dataSource = viewModel
         collectionView.delegate = viewModel
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.spinner.stopAnimating()
             self.collectionView.isHidden = false
             UIView.animate(withDuration: 0.4) {
                 self.collectionView.alpha = 1
             }
-        })
+        }
     }
 }

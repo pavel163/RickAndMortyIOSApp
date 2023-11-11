@@ -8,7 +8,6 @@
 import UIKit
 
 final class RMTabBarContoller: UITabBarController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTabs()

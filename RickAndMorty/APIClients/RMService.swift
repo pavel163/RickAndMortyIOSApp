@@ -9,7 +9,6 @@ import Foundation
 
 /// Primary API service object to get RIck and Morty data
 final class RMService {
-    
     /// Shared singlelon instance
     static let shared = RMService()
     

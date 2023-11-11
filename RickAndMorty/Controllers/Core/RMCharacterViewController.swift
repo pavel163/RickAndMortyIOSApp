@@ -8,16 +8,15 @@
 import UIKit
 
 final class RMCharacterViewController: UIViewController {
-    
     private let characterListView = RMCharacterListView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground        
+        view.backgroundColor = .systemBackground
         title = "Characters"
-        
+
         view.addSubview(characterListView)
-        
+
         NSLayoutConstraint.activate(
             [
                 characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
