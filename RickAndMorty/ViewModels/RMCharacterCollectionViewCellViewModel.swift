@@ -13,7 +13,7 @@ final class RMCharacterCollectionViewCellViewModel {
     private let image: URL?
     
     public var statusText: String {
-        return status.rawValue
+        return "Status: \(status.text)"
     }
     
     init(
