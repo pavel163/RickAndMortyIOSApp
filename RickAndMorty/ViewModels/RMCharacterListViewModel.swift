@@ -21,9 +21,7 @@ final class RMCharacterListViewModel: NSObject {
     private var characters: [RMCharacter] = []
     
     private var cellViewModels: [RMCharacterCollectionViewCellViewModel] = []
-    
-    private var loadedMorePages: [String] = []
-    
+        
     private var apiInfo: RMGetAllCharactersResponse.RMGetAllCharactersResponseInfo? = nil
     
     func fetchCharacters() {
@@ -159,27 +157,19 @@ extension RMCharacterListViewModel: UIScrollViewDelegate {
               !isLoadingMore,
               !cellViewModels.isEmpty,
               let nextUrlString = apiInfo?.next,
-              !loadedMorePages.contains(nextUrlString),
-              let url = URL(string: nextUrlString)
+              let url = URL(string: nextUrlString),
+              scrollView.contentOffset.y > 0.0
         else {
             return
         }
         
-//        self?.loadedMorePages.append(nextUrlString)
-
+        let offset = scrollView.contentOffset.y
+        let totalContentHeight = scrollView.contentSize.height
+        let totalScrollViewFixedHeight = scrollView.frame.size.height
         
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { [weak self] t in
-            let offset = scrollView.contentOffset.y
-            let totalContentHeight = scrollView.contentSize.height
-            let totalScrollViewFixedHeight = scrollView.frame.size.height
-            
-            if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
-                self?.fetchAdditionalCharacters(url: url)
-            }
-            
-            t.invalidate()
+        if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
+            fetchAdditionalCharacters(url: url)
         }
-        
     }
 }
  
