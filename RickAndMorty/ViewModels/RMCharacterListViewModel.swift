@@ -53,10 +53,6 @@ final class RMCharacterListViewModel: NSObject {
     }
     
     func fetchAdditionalCharacters(url: URL) {
-        guard !isLoadingMore else {
-            return
-        }
-        
         isLoadingMore = true
         print("Fetching more characters \(url.absoluteString)")
         guard let rmRequest = RMRequest(url: url) else {
@@ -64,7 +60,7 @@ final class RMCharacterListViewModel: NSObject {
         }
                 
         RMService.shared.execute(rmRequest) { [weak self] (result: Result<RMGetAllCharactersResponse, Error>) in
-            guard let strongSelf = self else {
+            guard let self else {
                 return
             }
             
@@ -73,16 +69,16 @@ final class RMCharacterListViewModel: NSObject {
                 let moreResults = responseModel.results
                 
                 let newCount = moreResults.count
-                let startIndex = strongSelf.characters.count
+                let startIndex = self.characters.count
                 let indexPathToAdd: [IndexPath] = Array(startIndex..<(startIndex+newCount)).compactMap {
                     IndexPath(row: $0, section: 0)
                 }
                 
-                strongSelf.apiInfo = responseModel.info
-                strongSelf.putCharacters(newCharacters: moreResults)
+                self.apiInfo = responseModel.info
+                self.putCharacters(newCharacters: moreResults)
                 DispatchQueue.main.async {
-                    strongSelf.delegate?.didLoadMoreCharacters(with: indexPathToAdd)
-                    strongSelf.isLoadingMore = false
+                    self.delegate?.didLoadMoreCharacters(with: indexPathToAdd)
+                    self.isLoadingMore = false
                 }
             case .failure(let error):
                 print(String(describing: error))
