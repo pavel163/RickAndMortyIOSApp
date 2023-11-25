@@ -42,9 +42,11 @@ final class RMCharacterCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (self: Self, previousTraitCollection: UITraitCollection) in
-            self.setUpLayer()
-          }
+        if #available(iOS 17.0, *) {
+            registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (self: Self, _: UITraitCollection) in
+                self.setUpLayer()
+            }
+        }
         contentView.backgroundColor = .secondarySystemBackground
         contentView.addSubviews(imageView, nameLabel, statusLabel)
         addConstraints()
@@ -88,7 +90,9 @@ final class RMCharacterCollectionViewCell: UICollectionViewCell {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        setUpLayer()
+        if UIDevice.current.systemVersion.compare("17.0", options: .numeric) == .orderedAscending {
+            setUpLayer()
+        }
     }
         
     override func prepareForReuse() {
