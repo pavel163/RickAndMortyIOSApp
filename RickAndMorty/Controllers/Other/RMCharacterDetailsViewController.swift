@@ -18,7 +18,6 @@ final class RMCharacterDetailsViewController : UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("Unsopported")
-        
     }
  
     override func viewDidLoad() {
