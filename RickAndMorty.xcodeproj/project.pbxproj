@@ -36,6 +36,7 @@
 		A253F45F2AF020BB00AC22F2 /* RMEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A253F45E2AF020BB00AC22F2 /* RMEpisodeViewController.swift */; };
 		A253F4612AF020DC00AC22F2 /* RMSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A253F4602AF020DC00AC22F2 /* RMSettingsViewController.swift */; };
 		A2E6CEDF2B12111300597270 /* RMFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6CEDE2B12111300597270 /* RMFooterLoadingCollectionReusableView.swift */; };
+		B8A2656F2B45AADB001F0969 /* RMImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2656E2B45AADB001F0969 /* RMImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		A253F45E2AF020BB00AC22F2 /* RMEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeViewController.swift; sourceTree = "<group>"; };
 		A253F4602AF020DC00AC22F2 /* RMSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsViewController.swift; sourceTree = "<group>"; };
 		A2E6CEDE2B12111300597270 /* RMFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
+		B8A2656E2B45AADB001F0969 /* RMImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +134,8 @@
 		A253F4372AF01A2D00AC22F2 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				B8A2656D2B45AABD001F0969 /* Services */,
 				A253F4522AF01D6000AC22F2 /* Resources */,
-				A253F4512AF01D5300AC22F2 /* Managers */,
 				A253F4502AF01D3100AC22F2 /* APIClients */,
 				A253F44F2AF01D1700AC22F2 /* Views */,
 				A253F44E2AF01D0F00AC22F2 /* ViewModels */,
@@ -193,13 +195,6 @@
 			path = APIClients;
 			sourceTree = "<group>";
 		};
-		A253F4512AF01D5300AC22F2 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		A253F4522AF01D6000AC22F2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +217,14 @@
 				A253F4602AF020DC00AC22F2 /* RMSettingsViewController.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		B8A2656D2B45AABD001F0969 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B8A2656E2B45AADB001F0969 /* RMImageLoader.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +300,7 @@
 				A24A141F2AF3AE4F002F1D2F /* RMOrigin.swift in Sources */,
 				A253F45D2AF020AC00AC22F2 /* RMLocationViewController.swift in Sources */,
 				A23BE8C32AF3B447002DF97C /* RMCharacterStatus.swift in Sources */,
+				B8A2656F2B45AADB001F0969 /* RMImageLoader.swift in Sources */,
 				A23BE8C52AF3B536002DF97C /* RMCharacterGender.swift in Sources */,
 				A253F4582AF01F1200AC22F2 /* RMEpisode.swift in Sources */,
 				A24A14212AF3AF55002F1D2F /* RMCharacterLocation.swift in Sources */,

@@ -1,4 +1,4 @@
-//
+ //
 //  RMCharacterListViewModel.swift
 //  RickAndMorty
 //
