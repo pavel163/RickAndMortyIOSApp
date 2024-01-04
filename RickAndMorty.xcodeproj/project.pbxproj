@@ -37,6 +37,7 @@
 		A253F4612AF020DC00AC22F2 /* RMSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A253F4602AF020DC00AC22F2 /* RMSettingsViewController.swift */; };
 		A2E6CEDF2B12111300597270 /* RMFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6CEDE2B12111300597270 /* RMFooterLoadingCollectionReusableView.swift */; };
 		B8A2656F2B45AADB001F0969 /* RMImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2656E2B45AADB001F0969 /* RMImageLoader.swift */; };
+		B8A265712B45BB51001F0969 /* RMCharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A265702B45BB51001F0969 /* RMCharacterDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		A253F4602AF020DC00AC22F2 /* RMSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSettingsViewController.swift; sourceTree = "<group>"; };
 		A2E6CEDE2B12111300597270 /* RMFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
 		B8A2656E2B45AADB001F0969 /* RMImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageLoader.swift; sourceTree = "<group>"; };
+		B8A265702B45BB51001F0969 /* RMCharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				A24E45692AF8E0960049048B /* RMCharacterListView.swift */,
 				A20075A72AFFE7FF0024298C /* RMCharacterCollectionViewCell.swift */,
 				A2E6CEDE2B12111300597270 /* RMFooterLoadingCollectionReusableView.swift */,
+				B8A265702B45BB51001F0969 /* RMCharacterDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				A24E456C2AF8E9070049048B /* Extensions.swift in Sources */,
 				A253F43B2AF01A2D00AC22F2 /* SceneDelegate.swift in Sources */,
 				A253F4612AF020DC00AC22F2 /* RMSettingsViewController.swift in Sources */,
+				B8A265712B45BB51001F0969 /* RMCharacterDetailsView.swift in Sources */,
 				A24E45622AF509F80049048B /* RMServiceError.swift in Sources */,
 				A24E456A2AF8E0960049048B /* RMCharacterListView.swift in Sources */,
 				A24A14192AF37D03002F1D2F /* RMService.swift in Sources */,
