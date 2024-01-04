@@ -8,7 +8,7 @@ import UIKit
 
 import Foundation
 
-final class RMCharacterDetailsViewController : UIViewController {
+final class RMCharacterDetailsViewController: UIViewController {
     private let viewModel: RMCharacterDetailsViewModel
     
     private let detailsView: RMCharacterDetailsView
@@ -19,6 +19,7 @@ final class RMCharacterDetailsViewController : UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("Unsopported")
     }
@@ -40,11 +41,8 @@ final class RMCharacterDetailsViewController : UIViewController {
     }
     
     @objc
-    private func didTapShare() {
-        
-    }
+    private func didTapShare() {}
 
-    
     private func addConstrains() {
         NSLayoutConstraint.activate([
             detailsView.topAnchor.constraint(
@@ -63,15 +61,14 @@ final class RMCharacterDetailsViewController : UIViewController {
     }
 }
 
-extension RMCharacterDetailsViewController : UICollectionViewDelegate, UICollectionViewDataSource {
-    
+extension RMCharacterDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.sections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
-        case 0: 
+        case 0:
             return 1
         case 1:
             return 8

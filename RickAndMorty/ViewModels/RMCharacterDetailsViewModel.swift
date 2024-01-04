@@ -18,7 +18,7 @@ final class RMCharacterDetailsViewModel {
     
     public let sections = SectionType.allCases
     
-    init(character: RMCharacter){
+    init(character: RMCharacter) {
         self.character = character
     }
     

@@ -58,7 +58,7 @@ final class RMRequest {
         self.queryParameters = queryParameters
     }
     
-convenience init?(url: URL) {
+    convenience init?(url: URL) {
         let string = url.absoluteString
         if !string.contains(Constants.baseUrl) {
             return nil
@@ -84,7 +84,7 @@ convenience init?(url: URL) {
             if !components.isEmpty, components.count > 1 {
                 let endpointString = components[0]
                 let queryItemsString = components[1]
-                let queryItems: [URLQueryItem] = queryItemsString.components(separatedBy: "&").compactMap{
+                let queryItems: [URLQueryItem] = queryItemsString.components(separatedBy: "&").compactMap {
                     guard $0.contains("=") else {
                         return nil
                     }

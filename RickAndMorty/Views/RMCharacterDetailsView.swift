@@ -9,7 +9,7 @@ import UIKit
 
 class RMCharacterDetailsView: UIView {
     var collectionView: UICollectionView?
-    
+
     private let viewModel: RMCharacterDetailsViewModel
 
     private let spinner: UIActivityIndicatorView = {
@@ -57,14 +57,14 @@ class RMCharacterDetailsView: UIView {
 
     private func createCollectionView() -> UICollectionView {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
-            return self.createSection(for: sectionIndex)
+            self.createSection(for: sectionIndex)
         }
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }
-    
+
     private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection {
         let sectionTypes = viewModel.sections
         switch sectionTypes[sectionIndex] {
