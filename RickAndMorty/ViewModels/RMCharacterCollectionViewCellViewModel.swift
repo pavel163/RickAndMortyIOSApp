@@ -42,6 +42,6 @@ final class RMCharacterCollectionViewCellViewModel: Hashable, Equatable {
             return
         }
         
-        ImageLoader.shared.download(url, completion: completion)
+        RMImageLoader.shared.download(url, completion: completion)
     }
 }

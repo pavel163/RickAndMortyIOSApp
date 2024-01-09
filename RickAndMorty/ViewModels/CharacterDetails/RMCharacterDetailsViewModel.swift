@@ -25,19 +25,20 @@ final class RMCharacterDetailsViewModel {
     
     private func setUpSections() {
         sections = [
-            .photo(viewModel: .init()),
+            .photo(viewModel: .init(imageUrl: URL(string: character.image))),
             .information(viewModels: [
-                .init(),
-                .init(),
-                .init(),
-                .init()
+                .init(value: character.status.text, type: .status),
+                .init(value: character.gender.rawValue, type: .gender),
+                .init(value: character.type, type: .type),
+                .init(value: character.species, type: .species),
+                .init(value: character.origin.name, type: .origin),
+                .init(value: character.location.name, type: .location),
+                .init(value: character.created, type: .created),
+                .init(value: "\(character.episode.count)", type: .episodeCount),
             ]),
-            .episodes(viewModels: [
-                .init(),
-                .init(),
-                .init(),
-                .init()
-            ])
+            .episodes(viewModels: character.episode.compactMap({
+                return RMCharacterDetailsEpisodeViewCellViewModel(episodeURL: URL(string: $0))
+            }))
         ]
     }
     
